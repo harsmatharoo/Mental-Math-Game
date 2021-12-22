@@ -1,0 +1,852 @@
+
+<!doctype HTML>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>Mental Math</title>
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	</head>
+<style>
+
+
+
+ body {
+
+    font-family: "Times New Roman", Times, serif;;
+	text-align: center;
+	color: #000080;
+	background: linear-gradient(360deg, black, white, rgb(200, 500, 0));
+}
+
+            }
+
+            .bigfont{
+                font-size: 0px;
+            }
+            .fancyfont{
+                font-stretch: 200px;
+                font-weight: 15000;
+
+            }
+
+            #shape {
+
+                width: 200px;
+                height: 200px;
+                background-color: red;
+                display: none;
+                position: relative;
+
+            }
+
+            .bold {
+
+                font-weight: bold;
+
+            }
+
+            .italic {
+                font-style: italic
+            }
+
+            header{
+                   background-color: #FF790E
+                padding: 0.50em
+                left: 50px;
+                 animation: slideup 2s;
+            }
+
+            .yellow-background{
+                background-color: hsl(60, 100%, 50%);
+            }
+
+            .stopwatch{
+                font-size: 20em;
+                font-family: monospace;
+            }
+
+            ul{
+                margin: 0;
+                padding: 0;
+            }
+
+            ul li{
+                list-style: none;
+                padding: 10px 0;
+            }
+
+            .center-text{
+                text-align: center;
+            }
+
+h1 {
+	background: linear-gradient(45deg, red, yellow, rgb(200, 0, 255));
+	font-size: 4em;
+	animation: slidein 4s;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+input {
+	font-size: 72px;
+	max-width: 100%;
+	border: none;
+	border-radius: 10px;
+	background-color: #E6E6E6;
+	text-align: center;
+}
+
+input:focus {
+	outline: none;
+}
+
+.success:hover {
+  background: repeating-linear-gradient(
+      135deg,
+      yellow 0px,
+      #00FF00 20px,
+      white 80px,
+      orange 100px
+    );
+  color: black;
+}
+
+.title:hover {
+  background: repeating-linear-gradient(
+      45deg,
+      white 0px,
+      cyan 20px,
+      cyan 80px,
+      white 100px
+    );
+  color: black;
+}
+
+.easy:hover {
+  background-color: yellow;
+  color: white;
+}
+.normal:hover {
+  background-color: blue;
+  color: white;
+}
+.hard:hover {
+  background-color: red;
+  color: white;
+}
+
+.legendary:hover {
+  background-color: black;
+  color: white;
+}
+@keyframes example{
+    20%   {background-color: red;}
+  25%  {background-color: orange;}
+  20%  {background-color: blue;}
+  100% {background-color: maroon;}
+  100% {background: linear-gradient(
+      360deg,
+      red 0px,
+    );;}
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 50%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes slideup {
+  from {
+    margin-top: 50%;
+    width: 300%;
+  }
+
+  to {
+    margin-top: 0%;
+    width: 100%;
+  }
+}
+
+
+button {
+	display: block;
+	cursor: pointer;
+	width: 90%;
+	margin-left: 20px;
+	height: 120px;
+	color: black;
+	font-weight: 900;
+	font-size: 50px;
+	border: 6px solid #000000;
+	border-radius: 10px;
+	margin: 0 auto;
+	margin-top: 10px;
+  animation: example 10s infinite;
+
+
+
+}
+
+.small-button{
+	width: 25%;
+	height: 55px;
+	background-color: brown;
+	font-size: 25px;
+
+
+}
+
+
+p {
+	text-align: center;
+	font-size: 22px;
+
+}
+
+.box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+    background-color: red;
+  }
+
+
+    #star-six {
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 100px solid red;
+      position: relative;
+    }
+
+p span {
+	font-size: 96px;
+}
+
+.container {
+	margin: 0 auto;
+	width: 700px;
+	display: flex;
+}
+
+.controls {
+	position: relative;
+	margin: 0 auto;
+	width: 270px;
+}
+
+.hide {
+	display: none; /* default value that is changed via javascript */
+}
+
+#response {
+	color: #FF6666;
+}
+
+.sparkle {
+    top: 55%;
+    left: 15%;
+    background: pink;
+    width: 100%;
+    height: 200%;
+
+  }
+#p{
+	padding-bottom: : 50px;
+	margin: -150px;
+	color: pink;
+}
+
+
+#start {
+	background-color: #00F8A0;
+	border-color: #00F8A0;
+
+}
+
+#stop {
+	background-color: #FF6666;
+	border-color: #FF6666;
+	margin-top: 40px;
+}
+
+.ghost {
+  opacity: 0.0;
+}
+</style>
+	<body>
+
+
+ <h1 class="center-text bold italic box">Test Your Math Skills! <i class="fas fa-satellite-dish"></i> </h1>
+
+    <header>
+
+    <div class="yellow-background">
+    <p class="center-text bigfont fancyfont sparkle"> Instructions:</p>
+    <ul class="italic bold bigfont center-text">
+      <li> ! The Game consists of Mental Math Questions</li>
+      <li>! User must answer every question right to advance</li>
+      <li>! A wrong answer would end the game</li>
+    </ul>
+
+  </div>
+
+</header>
+
+
+
+
+
+
+
+		<div class="row">
+			<div class="col-xs-5" >
+			<h2 id="gamedifficulty"> Choose Game Difficulty </h2>
+			<button class="easy small-button btn btn-primary btn-block" id="mul_btn">MULTIPICATION</button>
+			<button class="normal small-button btn btn-primary btn-block" id="div_btn">DIVISION</button>
+			<button class="hard small-button btn btn-primary btn-block" id="sub_btn">SUBTRACTION </button>
+			<button class="legendary small-button btn btn-primary btn-block" id="add_btn">ADDITION</button>
+			<button class="legendary small-button btn btn-primary btn-block" id="sqrt_btn">SQUARE ROOT</button>
+			<button class="legendary small-button btn btn-primary btn-block" id="all_btn">ALL</button>
+		</div>
+
+<div class="row">
+			<h2 id="gametype"> Choose Game Type </h2>
+			<button class="easy small-button btn btn-primary btn-block" id="easy_btn">EASY</button>
+			<button class="normal small-button btn btn-primary btn-block" id="normal_btn">NORMAL</button>
+			<button class="hard small-button btn btn-primary btn-block" id="hard_btn">HARD</button>
+			<button class="legendary small-button btn btn-primary btn-block" id="legendary_btn">LEGENDARY</button>
+
+		</div>
+
+		</div>
+		<h6 style="border-style: dotted; animation-name: example; "> </h2>
+
+
+		<div class="row">
+
+			<p>
+
+<span>           </span>
+
+<span>           </span>
+				<span id="p" style='color:red;margin-right:0.15em;margin-left:0.20em; display:inline-block;'>
+
+				</span>
+
+				 <span id="op"></span>
+
+
+				 <span id="q"></span>
+
+
+				<span id="mul"></span> <span id="divis"></span> <span id="subt"></span> <span id="sqrt"></span>
+			</p>
+			<p id="response"></p>
+			<p id="results"></p>
+			<p id="category"></p>
+			<div class="controls">
+				<form>
+					<input type="text" name="answer" id="in" autocomplete="off">
+				</form>
+				<button onclick="cats()" class="success" id="start_btn">START</button>
+				<button id="stop">STOP</button>
+
+		</div>
+		</div>
+		<script type="text/javascript">
+
+
+
+
+
+
+
+var startButton = document.getElementById("start_btn");
+var addButton = document.getElementById("add_btn");
+var mulButton = document.getElementById("mul_btn");
+var divButton = document.getElementById("div_btn");
+var sqrtButton = document.getElementById("sqrt_btn");
+var subButton = document.getElementById("sub_btn");
+var form = document.querySelector("form");
+var allButton = document.getElementById("all_btn");
+var easyButton = document.getElementById("easy_btn");
+var normalButton = document.getElementById("normal_btn");
+var hardButton = document.getElementById("hard_btn");
+var legendaryButton = document.getElementById("legendary_btn");
+
+var stopButton = document.getElementById("stop");
+var response = document.getElementById("response"); // used for Try Again text
+var results = document.getElementById("results");
+var category = document.getElementById("category");
+
+var inputField = document.getElementById("in");
+var p = document.getElementById("p");
+var q = document.getElementById("q");
+var op = document.getElementById("op");
+var mul = document.getElementById("mul");
+var divis = document.getElementById("divis");
+var subt = document.getElementById("subt");
+var sqrt = document.getElementById("sqrt");
+var response = document.getElementById("response"); // used for Try Again text
+var results = document.getElementById("results");
+var category = document.getElementById("category");
+var gametype = document.getElementById("gametype");
+var gamedifficulty = document.getElementById("gamedifficulty");
+
+/***** STATE VARIABLES *****/
+
+
+
+/***** STATE VARIABLES *****/
+var max = 20;
+var num1;
+var num2;
+var answer;
+var correct;
+
+var startTime;
+var endTime;
+
+var count; // number of correct answers
+var times = [];
+
+/***** INITIALIZING *****/
+inputField.className = "hide";
+stopButton.className = "hide";
+addButton.className = "hide";
+mulButton.className = "hide";
+easyButton.className = "hide";
+normalButton.className = "hide";
+divButton.className = "hide";
+legendaryButton.className = "hide";
+sqrtButton.className = "hide";
+subButton.className = "hide";
+allButton.className = "hide";
+hardButton.className = "hide";
+gametype.className = "hide";
+gamedifficulty.className = "hide";
+p.className = "hide";
+q.className = "hide";
+op.className = "hide";
+
+/***** EVENTS *****/
+startButton.onclick = function() {
+	// initializing the count
+	count = 0;
+	times = [];
+	results.innerHTML = ""; // clear results
+	category.innerHTML = ""; // clear category
+	refreshNums();
+	inputField.className = ""; // show the input field
+	stopButton.className = ""; // show the stop button
+	startButton.className = "hide";
+	addButton.className = "small-button box controls bigfont success";
+	mulButton.className = "small-button box controls bigfont success";
+	easyButton.className = "small-button box controls bigfont success";
+normalButton.className = "small-button box controls bigfont success";
+divButton.className = "small-button box controls bigfont success";
+legendaryButton.className = "small-button box controls bigfont success";
+sqrtButton.className = "small-button box controls bigfont success";
+subButton.className = "small-button box controls bigfont success";
+allButton.className = "small-button box controls bigfont success";
+hardButton.className = "small-button box controls bigfont success";
+p.className = "hide";
+q.className = "hide";
+op.className = "hide";
+
+gametype.className = "title";
+gamedifficulty.className = "title";
+	 // hide the start button
+	inputField.focus();
+};
+
+form.onsubmit = function(e) {
+	// need to prevent the default form submission wich reloads the page
+	e.preventDefault();
+	getAnswer();
+	refreshNums();
+};
+
+stopButton.onclick = function() {
+
+
+
+	addButton.className = "hide";
+mulButton.className = "hide";
+easyButton.className = "hide";
+normalButton.className = "hide";
+divButton.className = "hide";
+legendaryButton.className = "hide";
+sqrtButton.className = "hide";
+subButton.className = "hide";
+allButton.className = "hide";
+hardButton.className = "hide";
+gametype.className = "hide";
+gamedifficulty.className = "hide";
+p.className = "hide";
+q.className = "hide";
+op.className = "hide";
+
+
+
+
+	var resultString;
+	var categoryString;
+	if (times.length > 0) {
+		// getting mean time
+		var total = 0;
+		for (var i = 0; i < times.length; i++) {
+			total += times[i];
+		}
+		var mean = (total / times.length) / 1000;
+		resultString = "Average time: " + mean.toPrecision(4) + " sec";
+		categoryString = getCategory(mean);
+	} else {
+		resultString = "No results recorded. Hit the Enter key to submit your answers.";
+		categoryString = "";
+	}
+
+	inputField.className = "hide"; // hide the input field
+	stopButton.className = "hide"; // hide the stop button
+	startButton.className = ""; // show the start button
+
+	// clear numbers and present results
+	p.innerHTML = "";
+	q.innerHTML = "";
+	//.innerHTML = "";
+	response.innerHTML = ""; // clear response in case it was set
+	results.innerHTML = resultString;
+	category.innerHTML = categoryString;
+};
+
+
+
+
+addButton.onclick = function(){
+
+		op.innerHTML = "+"
+
+
+
+var arr = [addButton, mulButton, divButton, subButton, allButton, sqrtButton];
+
+	for (var i = 0; i < arr.length; i++){
+		arr[i].className = "hide";
+
+	}
+	gametype.className = "hide";
+
+	gamedifficulty.className = "hide";
+	correct = num1 + num2;
+
+
+
+}
+
+subButton.onclick = function(){
+		op.innerHTML = "-"
+
+
+
+var arr = [addButton, mulButton, divButton, subButton, allButton, sqrtButton];
+
+	for (var i = 0; i < arr.length; i++){
+		arr[i].className = "hide";
+
+	}
+
+			correct = num1 - num2;
+	gametype.className = "hide";
+
+	gamedifficulty.className = "hide";
+
+
+
+
+}
+
+mulButton.onclick = function(){
+
+	op.innerHTML = "x"
+
+
+var arr = [addButton, mulButton, divButton, subButton, allButton, sqrtButton];
+
+	for (var i = 0; i < arr.length; i++){
+		arr[i].className = "hide";
+
+		gametype.className = "ghost";
+
+	}
+
+ correct = num1*num2;
+ gametype.className = "hide";
+
+ gamedifficulty.className = "hide";
+
+
+
+}
+
+divButton.onclick= function(){
+
+var arr = [addButton, mulButton, divButton, subButton, allButton, sqrtButton];
+
+	for (var i = 0; i < arr.length; i++){
+		arr[i].className = "hide";
+
+	}
+	gametype.className = "ghost";
+
+	gamedifficulty.className = "ghost";
+
+
+
+
+}
+
+sqrtButton.onclick= function(){
+
+var arr = [addButton, mulButton, divButton, subButton, allButton, sqrtButton];
+
+	for (var i = 0; i < arr.length; i++){
+		arr[i].className = "hide";
+
+	}
+	gametype.className = "ghost";
+
+	gamedifficulty.className = "ghost";
+
+
+
+
+}
+
+allButton.onclick= function(){
+
+var arr = [addButton, mulButton, divButton, subButton, sqrtButton, allButton];
+
+	for (var i = 0; i < arr.length; i++){
+		arr[i].className = "hide";
+
+	}
+	gametype.className = "ghost";
+
+	gamedifficulty.className = "ghost";
+
+
+
+
+}
+
+
+easyButton.onclick= function(){
+
+
+	num1 = Math.floor((Math.random() * max) + 1);
+		num2 = Math.floor((Math.random() *max) + 1);
+
+var arr = [normalButton, legendaryButton, easyButton, hardButton];
+
+	for (var i = 0; i < arr.length; i++){
+		arr[i].className = "hide";
+
+	}
+	gametype.className = "ghost";
+
+	gamedifficulty.className = "ghost";
+
+
+	p.innerHTML = num1;
+
+
+
+
+	q.innerHTML = num2;
+	p.className = "";
+	q.className = "";
+	op.className = "";
+
+
+}
+
+
+
+
+normalButton.onclick= function(){
+
+	num1 = Math.floor((Math.random() * 100) + 1);
+		num2 = Math.floor((Math.random() *100) + 1);
+
+var arr = [normalButton, legendaryButton, easyButton, hardButton];
+
+	for (var i = 0; i < arr.length; i++){
+		arr[i].className = "hide";
+
+	}
+	gametype.className = "ghost";
+
+	gamedifficulty.className = "ghost";
+
+
+	p.innerHTML = num1;
+
+
+
+
+	q.innerHTML = num2;
+	p.className = "";
+	q.className = "";
+	op.className = "";
+
+
+}
+
+
+legendaryButton.onclick= function(){
+
+
+	num1 = Math.floor((Math.random() * 1000000) + 1);
+		num2 = Math.floor((Math.random()*1000000) + 1);
+
+num1 = Math.floor((Math.random() * max) + 1000000);
+var arr = [normalButton, legendaryButton, easyButton, hardButton];
+
+	for (var i = 0; i < arr.length; i++){
+		arr[i].className = "hide";
+
+	}
+	gametype.className = "ghost";
+
+	gamedifficulty.className = "ghost";
+
+	p.innerHTML = num1;
+
+
+
+
+	q.innerHTML = num2;
+	p.className = "";
+	q.className = "";
+	op.className = "";
+
+
+
+}
+
+
+hardButton.onclick= function(){
+
+
+
+		num1 = Math.floor((Math.random() * 1000) + 1);
+			num2 = Math.floor((Math.random() *1000) + 1);
+
+var arr = [normalButton, legendaryButton, easyButton, hardButton];
+
+	for (var i = 0; i < arr.length; i++){
+		arr[i].className = "hide";
+
+	}
+	gametype.className = "ghost";
+
+	gamedifficulty.className = "ghost";
+
+	p.innerHTML = num1;
+
+
+
+
+	q.innerHTML = num2;
+	p.className = "";
+	q.className = "";
+	op.className = "";
+
+}
+
+
+
+
+/***** FUNCTIONS ******/
+var refreshNums = function() {
+	// Getting some random numbers
+
+
+
+	// Printing numbers to user
+	p.innerHTML = num1 + 100;
+
+
+
+
+	q.innerHTML = num2 + 100;
+	// Starting timer
+	startTime = new Date();
+};
+
+/*
+* This is called in the onsubmit event
+*/
+var getAnswer = function() {
+
+
+
+
+	// Getting the users attempt
+	answer = parseInt(inputField.value);
+
+	if (answer === correct) {
+
+			p.innerHTML = num1 + 100;
+		// Stopping the timer and adding the time to the times array
+		endTime = new Date();
+		times[count++] = endTime.getTime() - startTime.getTime();
+		// the answer was correct, so no need for "Try Again"
+		response.innerHTML = "";
+		refreshNums();
+	} else {
+		response.innerHTML = "Try Again";
+	}
+	// clear the input field for the next round
+	inputField.value = "";
+};
+
+var getCategory = function(mean) {
+	var c;
+	if (mean < 2) {
+		c = "Human Computer";
+	} else if (mean < 4) {
+		c = "Math Wiz";
+	} else if (mean < 7) {
+		c = "B Student";
+	} else if (mean < 10) {
+		c = "Probably Drunk";
+	} else {
+		c = "High School Drop Out";
+	}
+	return c;
+};
+
+
+
+
+
+		</script>
+	</body>
+</html>
