@@ -2,6 +2,10 @@
 
 Easy to Play! Just open the projectcomplete.html file in your browser and bingo!
 
+Solve a variety of easy or expert mental math questions!
+
+Tip: Do not use a calculator
+
 Created using HTML, JavaScript, CSS and the Bootstrap library
 
 
