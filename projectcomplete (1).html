@@ -1,852 +1,307 @@
-
-<!doctype HTML>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<title>Mental Math</title>
-		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-	</head>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mental Math</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-
-
-
- body {
-
-    font-family: "Times New Roman", Times, serif;;
-	text-align: center;
-	color: #000080;
-	background: linear-gradient(360deg, black, white, rgb(200, 500, 0));
-}
-
-            }
-
-            .bigfont{
-                font-size: 0px;
-            }
-            .fancyfont{
-                font-stretch: 200px;
-                font-weight: 15000;
-
-            }
-
-            #shape {
-
-                width: 200px;
-                height: 200px;
-                background-color: red;
-                display: none;
-                position: relative;
-
-            }
-
-            .bold {
-
-                font-weight: bold;
-
-            }
-
-            .italic {
-                font-style: italic
-            }
-
-            header{
-                   background-color: #FF790E
-                padding: 0.50em
-                left: 50px;
-                 animation: slideup 2s;
-            }
-
-            .yellow-background{
-                background-color: hsl(60, 100%, 50%);
-            }
-
-            .stopwatch{
-                font-size: 20em;
-                font-family: monospace;
-            }
-
-            ul{
-                margin: 0;
-                padding: 0;
-            }
-
-            ul li{
-                list-style: none;
-                padding: 10px 0;
-            }
-
-            .center-text{
-                text-align: center;
-            }
-
-h1 {
-	background: linear-gradient(45deg, red, yellow, rgb(200, 0, 255));
-	font-size: 4em;
-	animation: slidein 4s;
-}
-
-h2 {
-	font-size: 2em;
-}
-
-input {
-	font-size: 72px;
-	max-width: 100%;
-	border: none;
-	border-radius: 10px;
-	background-color: #E6E6E6;
-	text-align: center;
-}
-
-input:focus {
-	outline: none;
-}
-
-.success:hover {
-  background: repeating-linear-gradient(
-      135deg,
-      yellow 0px,
-      #00FF00 20px,
-      white 80px,
-      orange 100px
-    );
-  color: black;
-}
-
-.title:hover {
-  background: repeating-linear-gradient(
-      45deg,
-      white 0px,
-      cyan 20px,
-      cyan 80px,
-      white 100px
-    );
-  color: black;
-}
-
-.easy:hover {
-  background-color: yellow;
-  color: white;
-}
-.normal:hover {
-  background-color: blue;
-  color: white;
-}
-.hard:hover {
-  background-color: red;
-  color: white;
-}
-
-.legendary:hover {
-  background-color: black;
-  color: white;
-}
-@keyframes example{
-    20%   {background-color: red;}
-  25%  {background-color: orange;}
-  20%  {background-color: blue;}
-  100% {background-color: maroon;}
-  100% {background: linear-gradient(
-      360deg,
-      red 0px,
-    );;}
-}
-
-@keyframes slidein {
-  from {
-    margin-left: 50%;
-    width: 300%;
-  }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
-}
-
-@keyframes slideup {
-  from {
-    margin-top: 50%;
-    width: 300%;
-  }
-
-  to {
-    margin-top: 0%;
-    width: 100%;
-  }
-}
-
-
-button {
-	display: block;
-	cursor: pointer;
-	width: 90%;
-	margin-left: 20px;
-	height: 120px;
-	color: black;
-	font-weight: 900;
-	font-size: 50px;
-	border: 6px solid #000000;
-	border-radius: 10px;
-	margin: 0 auto;
-	margin-top: 10px;
-  animation: example 10s infinite;
-
-
-
-}
-
-.small-button{
-	width: 25%;
-	height: 55px;
-	background-color: brown;
-	font-size: 25px;
-
-
-}
-
-
-p {
-	text-align: center;
-	font-size: 22px;
-
-}
-
-.box {
-    border-style: solid;
-    border-color: black;
-    border-width: 5px;
-    text-align: center;
-    background-color: red;
-  }
-
-
-    #star-six {
-      width: 0;
-      height: 0;
-      border-left: 50px solid transparent;
-      border-right: 50px solid transparent;
-      border-bottom: 100px solid red;
-      position: relative;
-    }
-
-p span {
-	font-size: 96px;
-}
-
-.container {
-	margin: 0 auto;
-	width: 700px;
-	display: flex;
-}
-
-.controls {
-	position: relative;
-	margin: 0 auto;
-	width: 270px;
-}
-
-.hide {
-	display: none; /* default value that is changed via javascript */
-}
-
-#response {
-	color: #FF6666;
-}
-
-.sparkle {
-    top: 55%;
-    left: 15%;
-    background: pink;
-    width: 100%;
-    height: 200%;
-
-  }
-#p{
-	padding-bottom: : 50px;
-	margin: -150px;
-	color: pink;
-}
-
-
-#start {
-	background-color: #00F8A0;
-	border-color: #00F8A0;
-
-}
-
-#stop {
-	background-color: #FF6666;
-	border-color: #FF6666;
-	margin-top: 40px;
-}
-
-.ghost {
-  opacity: 0.0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#0f0f1a;color:#e0e0f0;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:2rem 1rem}
+h1{font-size:2.4rem;font-weight:700;background:linear-gradient(90deg,#a78bfa,#60a5fa,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.25rem;text-align:center}
+.subtitle{font-size:.95rem;color:#888;margin-bottom:2rem;text-align:center}
+.app{width:100%;max-width:580px}
+.section-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#666;margin-bottom:.6rem}
+.op-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.5rem}
+.diff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.5rem}
+.op-btn,.diff-btn{padding:12px 8px;border:1.5px solid #2a2a40;border-radius:12px;background:#1a1a2e;color:#ccc;font-size:.85rem;font-weight:500;cursor:pointer;transition:all .15s;text-align:center;display:flex;flex-direction:column;align-items:center;gap:5px}
+.op-btn i{font-size:1.3rem;color:#888}
+.op-btn:hover,.diff-btn:hover{border-color:#4f46e5;background:#1e1e35;color:#fff}
+.op-btn.selected{border-color:#7c3aed;background:linear-gradient(135deg,#1e1040,#1a1a30);color:#a78bfa}
+.op-btn.selected i{color:#a78bfa}
+.diff-btn.selected{border-color:#2563eb;background:linear-gradient(135deg,#0f1f40,#0f1a30);color:#60a5fa}
+.diff-label{font-size:.7rem;color:#555;margin-top:2px}
+.diff-btn.selected .diff-label{color:#4a90d9}
+.btn-start{display:block;width:100%;padding:14px;border:none;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;font-size:1.1rem;font-weight:600;cursor:pointer;transition:all .2s;letter-spacing:.02em}
+.btn-start:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 20px rgba(124,58,237,.4)}
+.btn-start:disabled{opacity:.35;cursor:not-allowed}
+.game-area{display:none;text-align:center}
+.question-box{background:#1a1a2e;border:1.5px solid #2a2a40;border-radius:16px;padding:2rem 1.5rem;margin-bottom:1.5rem}
+.question-text{font-size:3.5rem;font-weight:700;font-family:'Courier New',monospace;color:#e0e0f0;letter-spacing:.05em;min-height:72px;display:flex;align-items:center;justify-content:center}
+.answer-wrap{margin-bottom:.75rem}
+.answer-input{width:240px;font-size:2.2rem;font-family:'Courier New',monospace;text-align:center;border:2px solid #2a2a40;border-radius:12px;background:#12121f;color:#e0e0f0;padding:10px 16px;outline:none;transition:border-color .15s}
+.answer-input:focus{border-color:#7c3aed;box-shadow:0 0 0 3px rgba(124,58,237,.2)}
+.answer-input.shake{animation:shake .35s}
+.feedback{font-size:.95rem;font-weight:600;height:22px;margin-bottom:1rem}
+.feedback.right{color:#34d399}
+.feedback.wrong{color:#f87171}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1rem}
+.stat-card{background:#1a1a2e;border:1.5px solid #2a2a40;border-radius:12px;padding:.85rem;text-align:center}
+.stat-val{font-size:1.6rem;font-weight:700;font-family:'Courier New',monospace;color:#e0e0f0}
+.stat-lbl{font-size:.65rem;color:#666;text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+.streak-fire{color:#fb923c}
+.progress-wrap{background:#1a1a2e;border-radius:20px;height:8px;overflow:hidden;margin-bottom:1rem}
+.progress-fill{height:100%;background:linear-gradient(90deg,#7c3aed,#34d399);border-radius:20px;transition:width .4s}
+.btn-stop{width:100%;padding:11px;border:1.5px solid #4a1a1a;border-radius:12px;background:transparent;color:#f87171;font-size:.95rem;font-weight:600;cursor:pointer;transition:all .15s}
+.btn-stop:hover{background:#1f0f0f;border-color:#f87171}
+.results-card{display:none;background:#1a1a2e;border:1.5px solid #2a2a40;border-radius:16px;padding:2rem;text-align:center}
+.result-score{font-size:4rem;font-weight:700;font-family:'Courier New',monospace;background:linear-gradient(90deg,#a78bfa,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.result-label{font-size:.95rem;color:#888;margin-bottom:1rem}
+.result-badge{display:inline-block;padding:6px 18px;border-radius:20px;font-size:.85rem;font-weight:600;background:#1e1040;color:#a78bfa;border:1.5px solid #4c1d95;margin-bottom:1rem}
+.result-detail{font-size:.85rem;color:#666;margin-bottom:1.25rem}
+.history-row{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:1.5rem}
+.hist-dot{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700}
+.hist-dot.c{background:#064e3b;color:#34d399}
+.hist-dot.w{background:#450a0a;color:#f87171}
+.play-again-btn{display:block;width:100%;padding:13px;border:none;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;font-size:1rem;font-weight:600;cursor:pointer;transition:all .2s}
+.play-again-btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(124,58,237,.4)}
+.config-panel{margin-bottom:1.5rem}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-10px)}40%{transform:translateX(10px)}60%{transform:translateX(-7px)}80%{transform:translateX(7px)}}
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+.pop{animation:pop .2s}
 </style>
-	<body>
+</head>
+<body>
 
+<div class="app">
+  <h1>Mental Math</h1>
+  <p class="subtitle">Pick an operation &amp; difficulty — race the clock.</p>
 
- <h1 class="center-text bold italic box">Test Your Math Skills! <i class="fas fa-satellite-dish"></i> </h1>
-
-    <header>
-
-    <div class="yellow-background">
-    <p class="center-text bigfont fancyfont sparkle"> Instructions:</p>
-    <ul class="italic bold bigfont center-text">
-      <li> ! The Game consists of Mental Math Questions</li>
-      <li>! User must answer every question right to advance</li>
-      <li>! A wrong answer would end the game</li>
-    </ul>
-
+  <!-- CONFIG -->
+  <div class="config-panel" id="config">
+    <p class="section-label">Operation</p>
+    <div class="op-grid">
+      <button class="op-btn" data-op="add"><i class="fa-solid fa-plus"></i>Addition</button>
+      <button class="op-btn" data-op="sub"><i class="fa-solid fa-minus"></i>Subtraction</button>
+      <button class="op-btn" data-op="mul"><i class="fa-solid fa-xmark"></i>Multiply</button>
+      <button class="op-btn" data-op="div"><i class="fa-solid fa-divide"></i>Division</button>
+      <button class="op-btn" data-op="sqrt"><i class="fa-solid fa-square-root-variable"></i>Square root</button>
+      <button class="op-btn" data-op="all"><i class="fa-solid fa-shuffle"></i>Mixed</button>
+    </div>
+    <p class="section-label">Difficulty</p>
+    <div class="diff-grid">
+      <button class="diff-btn" data-diff="easy">Easy<span class="diff-label">1 – 20</span></button>
+      <button class="diff-btn" data-diff="normal">Normal<span class="diff-label">1 – 100</span></button>
+      <button class="diff-btn" data-diff="hard">Hard<span class="diff-label">1 – 1 000</span></button>
+      <button class="diff-btn" data-diff="legendary">Legend<span class="diff-label">1 – 1 M</span></button>
+    </div>
+    <button class="btn-start" id="start-btn" disabled>
+      <i class="fa-solid fa-play"></i> Start
+    </button>
   </div>
 
-</header>
+  <!-- GAME -->
+  <div class="game-area" id="game-area">
+    <div class="question-box">
+      <div class="question-text" id="question">?</div>
+    </div>
+    <div class="answer-wrap">
+      <input class="answer-input" type="number" id="answer-in" autocomplete="off" placeholder="?" aria-label="Your answer">
+    </div>
+    <p class="feedback" id="feedback"></p>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-val" id="s-correct">0</div>
+        <div class="stat-lbl">Correct</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val streak-fire" id="s-streak">0 🔥</div>
+        <div class="stat-lbl">Streak</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="s-avg">—</div>
+        <div class="stat-lbl">Avg sec</div>
+      </div>
+    </div>
+    <div class="progress-wrap"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+    <button class="btn-stop" id="stop-btn"><i class="fa-solid fa-stop"></i> Stop &amp; see results</button>
+  </div>
 
+  <!-- RESULTS -->
+  <div class="results-card" id="results-card">
+    <div class="result-score" id="r-score">0</div>
+    <div class="result-label">questions answered correctly</div>
+    <div class="result-badge" id="r-badge">—</div>
+    <div class="result-detail" id="r-detail"></div>
+    <div class="history-row" id="r-history"></div>
+    <button class="play-again-btn" id="play-again-btn"><i class="fa-solid fa-rotate-left"></i> Play again</button>
+  </div>
+</div>
 
+<script>
+const RANGES = { easy: 20, normal: 100, hard: 1000, legendary: 1000000 };
+const PERFECT_SQUARES = [1,4,9,16,25,36,49,64,81,100,121,144,169,196,225,256,289,324,361,400];
 
+let op = null, diff = null;
+let num1 = 0, num2 = 0, correct = 0, activeOp = null;
+let count = 0, streak = 0, maxStreak = 0;
+let times = [], history = [];
+let startTime = null;
 
+const $ = id => document.getElementById(id);
 
+function rand(max) { return Math.floor(Math.random() * max) + 1; }
 
+function genQuestion() {
+  const max = RANGES[diff];
+  activeOp = op === 'all'
+    ? ['add','sub','mul','div','sqrt'][Math.floor(Math.random() * 5)]
+    : op;
 
-		<div class="row">
-			<div class="col-xs-5" >
-			<h2 id="gamedifficulty"> Choose Game Difficulty </h2>
-			<button class="easy small-button btn btn-primary btn-block" id="mul_btn">MULTIPICATION</button>
-			<button class="normal small-button btn btn-primary btn-block" id="div_btn">DIVISION</button>
-			<button class="hard small-button btn btn-primary btn-block" id="sub_btn">SUBTRACTION </button>
-			<button class="legendary small-button btn btn-primary btn-block" id="add_btn">ADDITION</button>
-			<button class="legendary small-button btn btn-primary btn-block" id="sqrt_btn">SQUARE ROOT</button>
-			<button class="legendary small-button btn btn-primary btn-block" id="all_btn">ALL</button>
-		</div>
+  if (activeOp === 'sqrt') {
+    num1 = PERFECT_SQUARES[Math.floor(Math.random() * PERFECT_SQUARES.length)];
+    num2 = 0;
+    correct = Math.sqrt(num1);
+    $('question').textContent = '√ ' + num1;
+  } else if (activeOp === 'div') {
+    const divMax = Math.min(max, 20);
+    num2 = rand(divMax);
+    correct = rand(Math.min(max, 50));
+    num1 = num2 * correct;
+    $('question').textContent = num1 + ' ÷ ' + num2;
+  } else {
+    num1 = rand(max);
+    num2 = rand(max);
+    const sym = { add: '+', sub: '−', mul: '×' }[activeOp];
+    if (activeOp === 'add') correct = num1 + num2;
+    else if (activeOp === 'sub') correct = num1 - num2;
+    else correct = num1 * num2;
+    $('question').textContent = num1 + ' ' + sym + ' ' + num2;
+  }
+  startTime = Date.now();
+}
 
-<div class="row">
-			<h2 id="gametype"> Choose Game Type </h2>
-			<button class="easy small-button btn btn-primary btn-block" id="easy_btn">EASY</button>
-			<button class="normal small-button btn btn-primary btn-block" id="normal_btn">NORMAL</button>
-			<button class="hard small-button btn btn-primary btn-block" id="hard_btn">HARD</button>
-			<button class="legendary small-button btn btn-primary btn-block" id="legendary_btn">LEGENDARY</button>
+function updateStats() {
+  $('s-correct').textContent = count;
+  $('s-streak').textContent = streak + (streak >= 3 ? ' 🔥' : '');
+  if (times.length > 0) {
+    const avg = times.reduce((a, b) => a + b, 0) / times.length / 1000;
+    $('s-avg').textContent = avg.toFixed(1);
+  }
+  $('progress').style.width = Math.min(100, count * 5) + '%';
+}
 
-		</div>
+function getCategory(mean) {
+  if (mean < 2) return 'Human calculator 🤖';
+  if (mean < 4) return 'Math wizard 🧙';
+  if (mean < 7) return 'Solid student 📚';
+  if (mean < 10) return 'Taking it slow 🐢';
+  return 'Just warming up 😅';
+}
 
-		</div>
-		<h6 style="border-style: dotted; animation-name: example; "> </h2>
+function startGame() {
+  count = 0; streak = 0; maxStreak = 0; times = []; history = [];
+  $('config').style.display = 'none';
+  $('results-card').style.display = 'none';
+  $('game-area').style.display = 'block';
+  $('feedback').textContent = '';
+  $('feedback').className = 'feedback';
+  $('answer-in').value = '';
+  updateStats();
+  genQuestion();
+  setTimeout(() => $('answer-in').focus(), 60);
+}
 
+function stopGame() {
+  $('game-area').style.display = 'none';
+  $('results-card').style.display = 'block';
+  $('r-score').textContent = count;
 
-		<div class="row">
+  const hist = $('r-history');
+  hist.innerHTML = '';
+  history.forEach((h, i) => {
+    const d = document.createElement('div');
+    d.className = 'hist-dot ' + (h ? 'c' : 'w');
+    d.title = h ? 'Correct' : 'Wrong';
+    d.textContent = i + 1;
+    hist.appendChild(d);
+  });
 
-			<p>
+  if (times.length > 0) {
+    const avg = times.reduce((a, b) => a + b, 0) / times.length / 1000;
+    $('r-badge').textContent = getCategory(avg);
+    $('r-detail').textContent =
+      'Avg response: ' + avg.toFixed(2) + 's · Best streak: ' + maxStreak;
+  } else {
+    $('r-badge').textContent = 'No data';
+    $('r-detail').textContent = 'No answers submitted.';
+  }
+}
 
-<span>           </span>
+// Op & diff selection
+document.querySelectorAll('.op-btn').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('.op-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    op = btn.dataset.op;
+    checkReady();
+  };
+});
+document.querySelectorAll('.diff-btn').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('.diff-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    diff = btn.dataset.diff;
+    checkReady();
+  };
+});
 
-<span>           </span>
-				<span id="p" style='color:red;margin-right:0.15em;margin-left:0.20em; display:inline-block;'>
+function checkReady() {
+  $('start-btn').disabled = !(op && diff);
+}
 
-				</span>
-
-				 <span id="op"></span>
-
-
-				 <span id="q"></span>
-
-
-				<span id="mul"></span> <span id="divis"></span> <span id="subt"></span> <span id="sqrt"></span>
-			</p>
-			<p id="response"></p>
-			<p id="results"></p>
-			<p id="category"></p>
-			<div class="controls">
-				<form>
-					<input type="text" name="answer" id="in" autocomplete="off">
-				</form>
-				<button onclick="cats()" class="success" id="start_btn">START</button>
-				<button id="stop">STOP</button>
-
-		</div>
-		</div>
-		<script type="text/javascript">
-
-
-
-
-
-
-
-var startButton = document.getElementById("start_btn");
-var addButton = document.getElementById("add_btn");
-var mulButton = document.getElementById("mul_btn");
-var divButton = document.getElementById("div_btn");
-var sqrtButton = document.getElementById("sqrt_btn");
-var subButton = document.getElementById("sub_btn");
-var form = document.querySelector("form");
-var allButton = document.getElementById("all_btn");
-var easyButton = document.getElementById("easy_btn");
-var normalButton = document.getElementById("normal_btn");
-var hardButton = document.getElementById("hard_btn");
-var legendaryButton = document.getElementById("legendary_btn");
-
-var stopButton = document.getElementById("stop");
-var response = document.getElementById("response"); // used for Try Again text
-var results = document.getElementById("results");
-var category = document.getElementById("category");
-
-var inputField = document.getElementById("in");
-var p = document.getElementById("p");
-var q = document.getElementById("q");
-var op = document.getElementById("op");
-var mul = document.getElementById("mul");
-var divis = document.getElementById("divis");
-var subt = document.getElementById("subt");
-var sqrt = document.getElementById("sqrt");
-var response = document.getElementById("response"); // used for Try Again text
-var results = document.getElementById("results");
-var category = document.getElementById("category");
-var gametype = document.getElementById("gametype");
-var gamedifficulty = document.getElementById("gamedifficulty");
-
-/***** STATE VARIABLES *****/
-
-
-
-/***** STATE VARIABLES *****/
-var max = 20;
-var num1;
-var num2;
-var answer;
-var correct;
-
-var startTime;
-var endTime;
-
-var count; // number of correct answers
-var times = [];
-
-/***** INITIALIZING *****/
-inputField.className = "hide";
-stopButton.className = "hide";
-addButton.className = "hide";
-mulButton.className = "hide";
-easyButton.className = "hide";
-normalButton.className = "hide";
-divButton.className = "hide";
-legendaryButton.className = "hide";
-sqrtButton.className = "hide";
-subButton.className = "hide";
-allButton.className = "hide";
-hardButton.className = "hide";
-gametype.className = "hide";
-gamedifficulty.className = "hide";
-p.className = "hide";
-q.className = "hide";
-op.className = "hide";
-
-/***** EVENTS *****/
-startButton.onclick = function() {
-	// initializing the count
-	count = 0;
-	times = [];
-	results.innerHTML = ""; // clear results
-	category.innerHTML = ""; // clear category
-	refreshNums();
-	inputField.className = ""; // show the input field
-	stopButton.className = ""; // show the stop button
-	startButton.className = "hide";
-	addButton.className = "small-button box controls bigfont success";
-	mulButton.className = "small-button box controls bigfont success";
-	easyButton.className = "small-button box controls bigfont success";
-normalButton.className = "small-button box controls bigfont success";
-divButton.className = "small-button box controls bigfont success";
-legendaryButton.className = "small-button box controls bigfont success";
-sqrtButton.className = "small-button box controls bigfont success";
-subButton.className = "small-button box controls bigfont success";
-allButton.className = "small-button box controls bigfont success";
-hardButton.className = "small-button box controls bigfont success";
-p.className = "hide";
-q.className = "hide";
-op.className = "hide";
-
-gametype.className = "title";
-gamedifficulty.className = "title";
-	 // hide the start button
-	inputField.focus();
+$('start-btn').onclick = startGame;
+$('stop-btn').onclick = stopGame;
+$('play-again-btn').onclick = () => {
+  $('results-card').style.display = 'none';
+  $('config').style.display = 'block';
 };
 
-form.onsubmit = function(e) {
-	// need to prevent the default form submission wich reloads the page
-	e.preventDefault();
-	getAnswer();
-	refreshNums();
-};
-
-stopButton.onclick = function() {
-
-
-
-	addButton.className = "hide";
-mulButton.className = "hide";
-easyButton.className = "hide";
-normalButton.className = "hide";
-divButton.className = "hide";
-legendaryButton.className = "hide";
-sqrtButton.className = "hide";
-subButton.className = "hide";
-allButton.className = "hide";
-hardButton.className = "hide";
-gametype.className = "hide";
-gamedifficulty.className = "hide";
-p.className = "hide";
-q.className = "hide";
-op.className = "hide";
-
-
-
-
-	var resultString;
-	var categoryString;
-	if (times.length > 0) {
-		// getting mean time
-		var total = 0;
-		for (var i = 0; i < times.length; i++) {
-			total += times[i];
-		}
-		var mean = (total / times.length) / 1000;
-		resultString = "Average time: " + mean.toPrecision(4) + " sec";
-		categoryString = getCategory(mean);
-	} else {
-		resultString = "No results recorded. Hit the Enter key to submit your answers.";
-		categoryString = "";
-	}
-
-	inputField.className = "hide"; // hide the input field
-	stopButton.className = "hide"; // hide the stop button
-	startButton.className = ""; // show the start button
-
-	// clear numbers and present results
-	p.innerHTML = "";
-	q.innerHTML = "";
-	//.innerHTML = "";
-	response.innerHTML = ""; // clear response in case it was set
-	results.innerHTML = resultString;
-	category.innerHTML = categoryString;
-};
-
-
-
-
-addButton.onclick = function(){
-
-		op.innerHTML = "+"
-
-
-
-var arr = [addButton, mulButton, divButton, subButton, allButton, sqrtButton];
-
-	for (var i = 0; i < arr.length; i++){
-		arr[i].className = "hide";
-
-	}
-	gametype.className = "hide";
-
-	gamedifficulty.className = "hide";
-	correct = num1 + num2;
-
-
-
-}
-
-subButton.onclick = function(){
-		op.innerHTML = "-"
-
-
-
-var arr = [addButton, mulButton, divButton, subButton, allButton, sqrtButton];
-
-	for (var i = 0; i < arr.length; i++){
-		arr[i].className = "hide";
-
-	}
-
-			correct = num1 - num2;
-	gametype.className = "hide";
-
-	gamedifficulty.className = "hide";
-
-
-
-
-}
-
-mulButton.onclick = function(){
-
-	op.innerHTML = "x"
-
-
-var arr = [addButton, mulButton, divButton, subButton, allButton, sqrtButton];
-
-	for (var i = 0; i < arr.length; i++){
-		arr[i].className = "hide";
-
-		gametype.className = "ghost";
-
-	}
-
- correct = num1*num2;
- gametype.className = "hide";
-
- gamedifficulty.className = "hide";
-
-
-
-}
-
-divButton.onclick= function(){
-
-var arr = [addButton, mulButton, divButton, subButton, allButton, sqrtButton];
-
-	for (var i = 0; i < arr.length; i++){
-		arr[i].className = "hide";
-
-	}
-	gametype.className = "ghost";
-
-	gamedifficulty.className = "ghost";
-
-
-
-
-}
-
-sqrtButton.onclick= function(){
-
-var arr = [addButton, mulButton, divButton, subButton, allButton, sqrtButton];
-
-	for (var i = 0; i < arr.length; i++){
-		arr[i].className = "hide";
-
-	}
-	gametype.className = "ghost";
-
-	gamedifficulty.className = "ghost";
-
-
-
-
-}
-
-allButton.onclick= function(){
-
-var arr = [addButton, mulButton, divButton, subButton, sqrtButton, allButton];
-
-	for (var i = 0; i < arr.length; i++){
-		arr[i].className = "hide";
-
-	}
-	gametype.className = "ghost";
-
-	gamedifficulty.className = "ghost";
-
-
-
-
-}
-
-
-easyButton.onclick= function(){
-
-
-	num1 = Math.floor((Math.random() * max) + 1);
-		num2 = Math.floor((Math.random() *max) + 1);
-
-var arr = [normalButton, legendaryButton, easyButton, hardButton];
-
-	for (var i = 0; i < arr.length; i++){
-		arr[i].className = "hide";
-
-	}
-	gametype.className = "ghost";
-
-	gamedifficulty.className = "ghost";
-
-
-	p.innerHTML = num1;
-
-
-
-
-	q.innerHTML = num2;
-	p.className = "";
-	q.className = "";
-	op.className = "";
-
-
-}
-
-
-
-
-normalButton.onclick= function(){
-
-	num1 = Math.floor((Math.random() * 100) + 1);
-		num2 = Math.floor((Math.random() *100) + 1);
-
-var arr = [normalButton, legendaryButton, easyButton, hardButton];
-
-	for (var i = 0; i < arr.length; i++){
-		arr[i].className = "hide";
-
-	}
-	gametype.className = "ghost";
-
-	gamedifficulty.className = "ghost";
-
-
-	p.innerHTML = num1;
-
-
-
-
-	q.innerHTML = num2;
-	p.className = "";
-	q.className = "";
-	op.className = "";
-
-
-}
-
-
-legendaryButton.onclick= function(){
-
-
-	num1 = Math.floor((Math.random() * 1000000) + 1);
-		num2 = Math.floor((Math.random()*1000000) + 1);
-
-num1 = Math.floor((Math.random() * max) + 1000000);
-var arr = [normalButton, legendaryButton, easyButton, hardButton];
-
-	for (var i = 0; i < arr.length; i++){
-		arr[i].className = "hide";
-
-	}
-	gametype.className = "ghost";
-
-	gamedifficulty.className = "ghost";
-
-	p.innerHTML = num1;
-
-
-
-
-	q.innerHTML = num2;
-	p.className = "";
-	q.className = "";
-	op.className = "";
-
-
-
-}
-
-
-hardButton.onclick= function(){
-
-
-
-		num1 = Math.floor((Math.random() * 1000) + 1);
-			num2 = Math.floor((Math.random() *1000) + 1);
-
-var arr = [normalButton, legendaryButton, easyButton, hardButton];
-
-	for (var i = 0; i < arr.length; i++){
-		arr[i].className = "hide";
-
-	}
-	gametype.className = "ghost";
-
-	gamedifficulty.className = "ghost";
-
-	p.innerHTML = num1;
-
-
-
-
-	q.innerHTML = num2;
-	p.className = "";
-	q.className = "";
-	op.className = "";
-
-}
-
-
-
-
-/***** FUNCTIONS ******/
-var refreshNums = function() {
-	// Getting some random numbers
-
-
-
-	// Printing numbers to user
-	p.innerHTML = num1 + 100;
-
-
-
-
-	q.innerHTML = num2 + 100;
-	// Starting timer
-	startTime = new Date();
-};
-
-/*
-* This is called in the onsubmit event
-*/
-var getAnswer = function() {
-
-
-
-
-	// Getting the users attempt
-	answer = parseInt(inputField.value);
-
-	if (answer === correct) {
-
-			p.innerHTML = num1 + 100;
-		// Stopping the timer and adding the time to the times array
-		endTime = new Date();
-		times[count++] = endTime.getTime() - startTime.getTime();
-		// the answer was correct, so no need for "Try Again"
-		response.innerHTML = "";
-		refreshNums();
-	} else {
-		response.innerHTML = "Try Again";
-	}
-	// clear the input field for the next round
-	inputField.value = "";
-};
-
-var getCategory = function(mean) {
-	var c;
-	if (mean < 2) {
-		c = "Human Computer";
-	} else if (mean < 4) {
-		c = "Math Wiz";
-	} else if (mean < 7) {
-		c = "B Student";
-	} else if (mean < 10) {
-		c = "Probably Drunk";
-	} else {
-		c = "High School Drop Out";
-	}
-	return c;
-};
-
-
-
-
-
-		</script>
-	</body>
+$('answer-in').addEventListener('keydown', e => {
+  if (e.key !== 'Enter') return;
+  const val = parseFloat($('answer-in').value);
+  if (isNaN(val)) return;
+
+  const elapsed = Date.now() - startTime;
+
+  if (val === correct) {
+    times.push(elapsed);
+    count++; streak++;
+    if (streak > maxStreak) maxStreak = streak;
+    history.push(true);
+
+    const fb = $('feedback');
+    fb.textContent = '✓ Correct!';
+    fb.className = 'feedback right';
+    $('answer-in').value = '';
+    updateStats();
+
+    // pop animation on question
+    const q = $('question');
+    q.classList.remove('pop');
+    void q.offsetWidth;
+    q.classList.add('pop');
+
+    setTimeout(() => { fb.textContent = ''; genQuestion(); }, 350);
+  } else {
+    streak = 0;
+    history.push(false);
+
+    const inp = $('answer-in');
+    inp.classList.remove('shake');
+    void inp.offsetWidth;
+    inp.classList.add('shake');
+    inp.addEventListener('animationend', () => inp.classList.remove('shake'), { once: true });
+
+    const fb = $('feedback');
+    fb.textContent = '✗ Answer was ' + correct;
+    fb.className = 'feedback wrong';
+    $('answer-in').value = '';
+    updateStats();
+
+    setTimeout(() => { fb.textContent = ''; genQuestion(); }, 1400);
+  }
+});
+</script>
+</body>
 </html>
