@@ -9,8 +9,14 @@ Tip: Do not use a calculator
 Created using HTML, JavaScript, CSS and the Bootstrap library
 
 
+<img width="777" height="524" alt="image" src="https://github.com/user-attachments/assets/8353ea4e-200e-4676-bef5-1cc8f18f01ec" />
 
-![metal math 1](https://user-images.githubusercontent.com/84873873/148670757-fa61575d-b3ba-4409-9673-1083d255868e.png)
 
 ![Mental Math 2](https://user-images.githubusercontent.com/84873873/148670760-f23a5558-71cd-44f2-b364-08fcb9d1973b.png)
+
+<img width="688" height="563" alt="image" src="https://github.com/user-attachments/assets/d95cbbad-7da4-48ec-98ed-77e98accb839" />
+
+<img width="704" height="460" alt="image" src="https://github.com/user-attachments/assets/01de58d7-0682-457f-87ae-8884ab505eaa" />
+
+
 
